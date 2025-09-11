@@ -1,7 +1,7 @@
 #This program uses the input function to capture a credit card number
 
-input('Enter credit card number(num1): ')
-input('Enter expiration date(num2): ')
-input('Enter CVV(num3): ')
+creditnumber = input('Enter credit card number: ')
+creditdate = input('Enter expiration date (format mm/yy): ')
+creditCVV = input('Enter CVV (found on the back of your card): ')
 
-print
+print (f'Your credit card number is {creditnumber}, your expiration date is {creditdate}, and your credit verification value {creditCVV}.')

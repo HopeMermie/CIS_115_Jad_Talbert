@@ -5,7 +5,7 @@ num2 = input ('Enter second number: ')
 
 modulo = int(num1)%int(num2)
  
-if modulo:
-    print (f'The remainder of the division operation {modulo} is even')
+if modulo ==0:
+    print ('The remainder of the division operation is even')
 else:
     print ('The remainder of the division operation is odd')

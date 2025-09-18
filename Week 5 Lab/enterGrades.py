@@ -1,11 +1,12 @@
 #This program allows a user to enter up to 10 grades
 
-count = 0
-numOfGrades = int(input("How many grades would you like to enter?: "))
+numberofgrades = int(input("Enter up to 10 grades: "))
+n=0
+print(f"{numberofgrades}")
 
-while count < numOfGrades:
-    count = count + 1 
-    grade = int(input("Enter your grade: "))
-    print = (f"You entered {grade}")
-    if (count >= numOfGrades):
-        print (f"The user enetered {numOfGrades} grades and is done.")
+while n < numberofgrades:
+    n=n+1
+    grades = int(input("Enter grade: "))
+    print(f'{grades}')
+if n>=numberofgrades:
+    print(f"You have entered {numberofgrades} grades.")

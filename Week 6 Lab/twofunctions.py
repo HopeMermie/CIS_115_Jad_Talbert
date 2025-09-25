@@ -1,4 +1,4 @@
-#
+#This program experiments with calling a defined message from another defined message
 def print_message1():
     print("I was called first.")
     print_message2()

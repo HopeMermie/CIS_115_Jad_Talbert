@@ -1,11 +1,10 @@
+#This program determines the hypotenuse of a right-triangle using the Pathagroean Theorem
 import math
-def message1():
-    x = input("Please enter the value of leg 1: ")
-    y = input("Please enter the value of leg 2: ")
-    message2()
-def message2():
-    c = float(x**2)+float(y**2)
-    result = math.sqrt (c)
-    print(f"The hypoteneuse of the right-triangle is {result} ")
+X = input("Please enter the value of leg 1: ")
+Y = input("Please enter the value of leg 2: ")
+c = float(X)**2+float(Y)**2
+result = math.sqrt (c)
 
+def message1():
+    print(f"The hypoteneuse of the right-triangle is {result} ")
 message1()

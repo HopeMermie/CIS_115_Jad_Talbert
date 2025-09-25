@@ -1,7 +1,7 @@
 
 def message():
-    mass = 3
-    c = 2.99 * 10**8
+    mass = input("3")
+    c = input("2.99 * 10**8")
     calculate_energy()
 
 def calculate_energy():

@@ -1,6 +1,8 @@
-m = input("Please enter your mass: ")
-v = input("Please enter your velocity: ")
-def kinetic_energy(m,v):
-    KE = .5 * float(m) * float(v)**2
+#This program returns the kinetic energy ina define function that asks for user input of mass and velocity
+def kinetic_energy():
+    m = float(input("Please enter your mass: "))
+    v = float(input("Please enter your velocity: "))
+    KE = .5 * (m) * (v)**2
     print(f"The kenetic energy is {KE}.")
-kinetic_energy(m,v)
+    return KE
+kinetic_energy()

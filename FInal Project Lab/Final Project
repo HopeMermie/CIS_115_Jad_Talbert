@@ -20,18 +20,12 @@ def append_to_list():
         if prompt == 'y':
             productidlist.append(input('Choose a product ID from the product catalog to continue: '))
         elif prompt == 'n':
-            print(f'{productidlist}')
-            done = False
-        else:
-            print(f'error, printing list: {productidlist}')
+            Check = input("Are you ready to check out (y or n?):")
+            Check = True 
+            while Check:
+                if Check == 'y':
+                    billing = input ("Enter your billing/shipping information: ")
+                elif Check =='n':
+                     productidlist.append(input('Choose a product ID from the product catalog to continue: '))
             done = False
 append_to_list()
-
-def word_frequency(productidlist):
-    wordcount = {}
-    words = productidlist.split()
-    for word in words:
-        wordcount[word] = wordcount.get(word, 0) + 1
-    return wordcount
-yes = word_frequency(productidlist)
-print(f"{yes}")

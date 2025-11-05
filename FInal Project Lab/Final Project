@@ -27,5 +27,6 @@ def append_to_list():
                     billing = input ("Enter your billing/shipping information: ")
                 elif Check =='n':
                      productidlist.append(input('Choose a product ID from the product catalog to continue: '))
-            done = False
+    done = False
+    Check = False
 append_to_list()

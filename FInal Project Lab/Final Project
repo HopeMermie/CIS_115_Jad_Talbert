@@ -1,4 +1,4 @@
-# Week 12: I want to try to print the catalog and create input functinons with append functions and dictionaries.
+# Week 13: I want to focus on creating dictionaries, letting the qty be modified in code and then connect that input with the dictionary
 print("	--------------------------------------------------------------------")
 print("	                           PRODUCT CATALOG")
 print("	--------------------------------------------------------------------")
@@ -9,10 +9,50 @@ print("	4      |   Ring Camera(wireless)                        |   $156.00")
 print("	5      |   Smart TV(TCL 70 inch)                        |   $359.00")
 print("	---------------------------------------------------------------------")
 
-prompt_1 = input("Choose a product ID from the product catalog to continue: ")
+USB_Dive = {
+    "Product ID": 1,
+    "SKU": "usb_k981",
+    "Price": 12.00,
+    "Qty": "{Cart}",
+    "Description": "USB 128 GB drive.",
+    "Qty on Hand": 1000,
+}
+Mac_Book_Pro = {
+    "Product ID": 2,
+    "SKU": "mbpro_490",
+    "Price": 2900.00,
+    "Qty": "{Cart}",
+    "Description": "Mac Book Pro 15 inch.",
+    "Qty on Hand": 45,
+}
+Arduino = {
+    "Product ID": 3,
+    "SKU": "cam_78",
+    "Price": 48.00,
+    "Qty": "{Cart}",
+    "Description": "Arduino microprocessor.",
+    "Qty on Hand": 98,
+}
+Ring_Camera = {
+    "Product ID": 4,
+    "SKU": "chip_1010",
+    "Price": 156.00,
+    "Qty": "{Cart}",
+    "Description": "Ring Camera. Model 78.",
+    "Qty on Hand": 98,
+}
+Smart_TV = {
+    "Product ID": 5,
+    "SKU": "smt_tv_100",
+    "Price": 359.00,
+    "Qty": "{Cart}",
+    "Description": "TCL Smart TV.",
+    "Qty on Hand": 225,
+}
+Cart = input("Choose a product ID from the product catalog to continue: ")
 
 productidlist = []
-productidlist.append(input("Enter quantity for product {id_entered_goes_here}: "))
+productidlist.append(input(f"Enter quantity for product {Cart}: "))
 def append_to_list():
     done = True
     while done:  

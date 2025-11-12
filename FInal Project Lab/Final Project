@@ -1,4 +1,4 @@
-# Week 13: I want to focus on creating dictionaries, letting the qty be modified in code and then connect that input with the dictionary
+# Week 13: I want to focus on creating dictionaries, letting the qty be modified in code and then connect that input with the dictionary. When they enter an ID, i want it to show the attributes of that specific object when they add it to their cart. When they dont want to add anymore to their cart I want it to show a list of the items with the quantity and then prompt for billing information.
 print("	--------------------------------------------------------------------")
 print("	                           PRODUCT CATALOG")
 print("	--------------------------------------------------------------------")
@@ -9,50 +9,51 @@ print("	4      |   Ring Camera(wireless)                        |   $156.00")
 print("	5      |   Smart TV(TCL 70 inch)                        |   $359.00")
 print("	---------------------------------------------------------------------")
 
-USB_Dive = {
-    "Product ID": 1,
+products = [
+     {
+    "ProductID": 1,
     "SKU": "usb_k981",
     "Price": 12.00,
-    "Qty": "{Cart}",
+    "Qty": "{qtyList}",
     "Description": "USB 128 GB drive.",
-    "Qty on Hand": 1000,
-}
-Mac_Book_Pro = {
-    "Product ID": 2,
+    "QtyonHand": 1000,
+    },
+    {
+    "ProductID": 2,
     "SKU": "mbpro_490",
     "Price": 2900.00,
-    "Qty": "{Cart}",
+    "Qty": "{qtyList}",
     "Description": "Mac Book Pro 15 inch.",
     "Qty on Hand": 45,
-}
-Arduino = {
-    "Product ID": 3,
+    },
+    {
+    "ProductID": 3,
     "SKU": "cam_78",
     "Price": 48.00,
-    "Qty": "{Cart}",
+    "Qty": "{qtyList}",
     "Description": "Arduino microprocessor.",
-    "Qty on Hand": 98,
-}
-Ring_Camera = {
-    "Product ID": 4,
+    "QtyonHand": 98,
+    },
+    {
+    "ProductID": 4,
     "SKU": "chip_1010",
     "Price": 156.00,
-    "Qty": "{Cart}",
+    "Qty": "{qtyList}",
     "Description": "Ring Camera. Model 78.",
     "Qty on Hand": 98,
-}
-Smart_TV = {
-    "Product ID": 5,
+    },
+    {
+    "ProductID": 5,
     "SKU": "smt_tv_100",
     "Price": 359.00,
-    "Qty": "{Cart}",
+    "Qty": "{qtyList}",
     "Description": "TCL Smart TV.",
-    "Qty on Hand": 225,
-}
-Cart = input("Choose a product ID from the product catalog to continue: ")
-
-productidlist = []
-productidlist.append(input(f"Enter quantity for product {Cart}: "))
+    "QtyonHand": 225,
+    }
+]
+productidlist = input("Choose a product ID from the product catalog to continue: ")
+qtyList = (input(f"Enter quantity for product {productidlist}: "))
+productidlist.append(input(f"{productidlist}"))
 def append_to_list():
     done = True
     while done:  

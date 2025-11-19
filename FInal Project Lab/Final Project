@@ -51,10 +51,11 @@ products = [
     "QtyonHand": 225,
     }
 ]
-productidlist = input("Choose a product ID from the product catalog to continue: ")
-qtyList = (input(f"Enter quantity for product {productidlist}: "))
-productlist.append(input(f"{productidlist}"))
+productlist = input("Choose a product ID from the product catalog to continue: ")
+qtyList = (input(f"Enter quantity for product {productlist}: "))
+productidlist = []
 def append_to_list():
+    productidlist.append
     done = True
     while done:  
         prompt = input("Would you like to add another product (y or n)?: ")
@@ -65,12 +66,29 @@ def append_to_list():
             Check = True 
             while Check:
                 if Check == 'y':
-                    billing = input ("Enter your billing/shipping information: ")
-                elif Check =='n':
+                    print("Enter your billing/shipping information below: ")
+                    firstname = input("Please enter your first name: ")
+                    lastname = input("Please enter your last name: ")
+                    city = input("Please enter your city: ")
+                    state = input("Please enter your state: ")
+                    zipcode = input("Please enter your zipcode: ")
+                    phone = input("Please enter your phone number: ")
+                elif Check == 'n':
                      productidlist.append(input('Choose a product ID from the product catalog to continue: '))
-    done = False
     Check = False
+    done = False
 append_to_list()
+
+names_and_adresses = {
+    "firstname" : "{firstname}",
+    "lastname" : '{lastname}',
+    "city": '{city}',
+    "state": '{state}',
+    "zipcode": '{zipcode}',
+    "phonenumber": '{phone}'}
+def print_dictionary():
+    print(f"{names_and_adresses}")
+print_dictionary()
 
 def validateCreditCard(ccNum):
     ccNum = ccNum [::-1]

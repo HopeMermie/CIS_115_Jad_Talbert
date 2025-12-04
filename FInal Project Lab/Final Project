@@ -1,4 +1,4 @@
-# Week 13: I want to focus on creating dictionaries, letting the qty be modified in code and then connect that input with the dictionary. When they enter an ID, i want it to show the attributes of that specific object when they add it to their cart. When they dont want to add anymore to their cart I want it to show a list of the items with the quantity and then prompt for billing information.
+# Week 15: Fix loop error, link credit card stuff
 print("	--------------------------------------------------------------------")
 print("	                           PRODUCT CATALOG")
 print("	--------------------------------------------------------------------")
@@ -14,7 +14,7 @@ products = [
     "ProductID": 1,
     "SKU": "usb_k981",
     "Price": 12.00,
-    "Qty": "{qtyList}",
+    "Qty":0,
     "Description": "USB 128 GB drive.",
     "QtyonHand": 1000,
     },
@@ -22,15 +22,15 @@ products = [
     "ProductID": 2,
     "SKU": "mbpro_490",
     "Price": 2900.00,
-    "Qty": "{qtyList}",
+    "Qty":0,
     "Description": "Mac Book Pro 15 inch.",
-    "Qty on Hand": 45,
+    "QtyonHand": 45,
     },
     {
     "ProductID": 3,
     "SKU": "cam_78",
     "Price": 48.00,
-    "Qty": "{qtyList}",
+    "Qty":0,
     "Description": "Arduino microprocessor.",
     "QtyonHand": 98,
     },
@@ -38,45 +38,46 @@ products = [
     "ProductID": 4,
     "SKU": "chip_1010",
     "Price": 156.00,
-    "Qty": "{qtyList}",
+    "Qty":0,
     "Description": "Ring Camera. Model 78.",
-    "Qty on Hand": 98,
+    "QtyonHand": 98,
     },
     {
     "ProductID": 5,
     "SKU": "smt_tv_100",
     "Price": 359.00,
-    "Qty": "{qtyList}",
+    "Qty":0,
     "Description": "TCL Smart TV.",
     "QtyonHand": 225,
     }
 ]
-productlist = input("Choose a product ID from the product catalog to continue: ")
-qtyList = (input(f"Enter quantity for product {productlist}: "))
-productidlist = []
+
+product_cart = {}
 def append_to_list():
-    productidlist.append
     done = True
     while done:  
-        prompt = input("Would you like to add another product (y or n)?: ")
-        if prompt == 'y':
-            productidlist.append(input('Choose a product ID from the product catalog to continue: '))
+        productlist = input("Choose a product ID from the product catalog to continue: ")
+        qtyList = int(input(f"Enter quantitiy for product {productlist}: "))
+        if productlist in product_cart: 
+            product_cart[productlist] += qtyList
+        else:
+            product_cart[productlist] = qtyList
+        prompt = input("Would you like to add another product (y or n?): ")
+        if prompt == "y":
+            productlist = (input("choose a product ID from the product catalog to conintue: "))
         elif prompt == 'n':
-            Check = input("Are you ready to check out (y or n?):")
-            Check = True 
-            while Check:
-                if Check == 'y':
+            Check = input("Are you ready to check out (y or n?): ")
+            while Check == "y" and Check == "n":
+                Check = input("Please enter 'y' for Yes or 'n' No: ")
+                if Check == "y":
                     print("Enter your billing/shipping information below: ")
                     firstname = input("Please enter your first name: ")
                     lastname = input("Please enter your last name: ")
-                    city = input("Please enter your city: ")
+                    city = input("Please enter you city: ")
                     state = input("Please enter your state: ")
                     zipcode = input("Please enter your zipcode: ")
-                    phone = input("Please enter your phone number: ")
-                elif Check == 'n':
-                     productidlist.append(input('Choose a product ID from the product catalog to continue: '))
-    Check = False
-    done = False
+                    phonenumber = input("Please enter your phone number: ")
+                    break
 append_to_list()
 
 names_and_adresses = {

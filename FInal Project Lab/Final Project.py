@@ -28,15 +28,15 @@ products = [
     },
     {
     "ProductID": 3,
-    "SKU": "cam_78",
+    "SKU": "chip_1010",
     "Price": 48.00,
     "Qty":0,
     "Description": "Arduino microprocessor.",
-    "QtyonHand": 98,
+    "QtyonHand": 325,
     },
     {
     "ProductID": 4,
-    "SKU": "chip_1010",
+    "SKU": "cam_78",
     "Price": 156.00,
     "Qty":0,
     "Description": "Ring Camera. Model 78.",
@@ -53,26 +53,20 @@ products = [
 ]
 
 product_cart = {}
-def getproduct(pid):
-    for p in products:
-        if p["ProductID"] == pid:
-            return p
-    return None
 def append_to_list():
     done = True
     while done:  
-        try:
             productlist = input("Choose a product ID from the product catalog to continue (1-5): ")
-        except ValueError:
-            print("Invalid input. Enter a number between 1 and 5.")
-            continue
-        
-        qtyList = int(input(f"Enter quantitiy for product {productlist}: "))
-        if productlist in product_cart: 
-            product_cart[productlist] += qtyList
-        else:
-            product_cart[productlist] = qtyList
-        prompt = input("Would you like to add another product (y or n?): ")
+            for item in products:
+                if (items["ProductID:"] == productlist):
+                    print (items)
+                    qtyList = int(input(f"Enter quantitiy for product {productlist}: "))
+                if productlist in product_cart: 
+                    product_cart[productlist] += qtyList
+                else:
+                    product_cart[productlist] = qtyList
+                prompt = input("Would you like to add another product (y or n?): ")
+                
         if prompt == "y":
             productlist = (input("choose a product ID from the product catalog to conintue: "))
         elif prompt == 'n':

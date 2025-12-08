@@ -53,10 +53,20 @@ products = [
 ]
 
 product_cart = {}
+def getproduct(pid):
+    for p in products:
+        if p["ProductID"] == pid:
+            return p
+    return None
 def append_to_list():
     done = True
     while done:  
-        productlist = input("Choose a product ID from the product catalog to continue: ")
+        try:
+            productlist = input("Choose a product ID from the product catalog to continue (1-5): ")
+        except ValueError:
+            print("Invalid input. Enter a number between 1 and 5.")
+            continue
+        
         qtyList = int(input(f"Enter quantitiy for product {productlist}: "))
         if productlist in product_cart: 
             product_cart[productlist] += qtyList
@@ -67,7 +77,7 @@ def append_to_list():
             productlist = (input("choose a product ID from the product catalog to conintue: "))
         elif prompt == 'n':
             Check = input("Are you ready to check out (y or n?): ")
-            while Check == "y" and Check == "n":
+            while Check != "y" and Check != "n":
                 Check = input("Please enter 'y' for Yes or 'n' No: ")
                 if Check == "y":
                     print("Enter your billing/shipping information below: ")

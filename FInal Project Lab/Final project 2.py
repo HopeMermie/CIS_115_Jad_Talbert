@@ -81,9 +81,7 @@ def append_to_list():
                         product_found = True
 
                         print(product_cart)
-
-                    #Make sure they still want product before continuing
-
+                        
                     #Product 1
                         if affirm == "y":
                             if productlist==1:
@@ -179,6 +177,41 @@ def append_to_list():
                                     total = total + n
                                 if total % 10 == 0:
                                     print(f"The credit card {ccNum} is valid!")
+                                    expdate = input("Enter the expiration date on your card: ")
+                                    cvv = input("Please enter your CVV: ")
+                                    print("	----------------------------")
+                                    print("	-----Credit Information-----")
+                                    print("	----------------------------")
+                                    print(f"Credit Card Number: {ccNum}")
+                                    print(f"Expiration Date: {expdate}")
+                                    print(f"CVV: {cvv}")
+                                    print("	----------------------------")
+                                    #multiply for total here 
+                                    print(" ")
+                                    print("----------------------------------------------------------------------------------------")
+                                    print("                              Billing/Shipping Information: ")
+                                    print("----------------------------------------------------------------------------------------")
+                                    print(" ")
+                                    print(f"{firstname}, {lastname} ")
+                                    print(f"Address: {address}")
+                                    print(f"City: {city}")
+                                    print(f"State: {state}")
+                                    print(f"Zip/Post Code: {zipcode}")
+                                    print(f"Email: {email}")
+                                    print(f"Phone: {phonenumber}")
+                                    print(" ")
+                                    print("----------------------------------------------------------------------------------------")
+                                    print("                              Billing/Shipping Information: ")
+                                    print("----------------------------------------------------------------------------------------")
+                                    print(" ")
+                                    print("****************************************************************************************")
+                                    print(" SKU           Qty          Price            Description                           Total")
+                                    print("****************************************************************************************")
+                                    for x in product_cart:
+                                        if product_cart[x] > 0:
+                                            print(f"{products[x-1]["SKU"]}        {products[x-1]["Qty"]}           {products[x-1]["Price"]}               {products[x-1]["Description"]}")
+                                    print("****************************************************************************************")
+
                                     done = False
                                 else:
                                     print("Invalid credit card entered. Please try again.")

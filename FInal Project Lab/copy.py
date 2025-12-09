@@ -13,7 +13,6 @@ products = [
     "ProductID": 1,
     "SKU": "usb_k981",
     "Price": 12.00,
-    "Qty":"{qtyList}",
     "Description": "USB 128 GB drive.",
     "QtyonHand": 1000,
     },
@@ -21,7 +20,6 @@ products = [
     "ProductID": 2,
     "SKU": "mbpro_490",
     "Price": 2900.00,
-    "Qty":"{qtyList}",
     "Description": "Mac Book Pro 15 inch.",
     "QtyonHand": 45,
     },
@@ -29,7 +27,6 @@ products = [
     "ProductID": 3,
     "SKU": "chip_1010",
     "Price": 48.00,
-    "Qty":"{qtyList}",
     "Description": "Arduino microprocessor.",
     "QtyonHand": 325,
     },
@@ -37,7 +34,6 @@ products = [
     "ProductID": 4,
     "SKU": "cam_78",
     "Price": 156.00,
-    "Qty":"{qtyList}",
     "Description": "Ring Camera. Model 78.",
     "QtyonHand": 98,
     },
@@ -45,7 +41,6 @@ products = [
     "ProductID": 5,
     "SKU": "smt_tv_100",
     "Price": 359.00,
-    "Qty":"{qtyList}",
     "Description": "TCL Smart TV.",
     "QtyonHand": 225,
     }
@@ -113,6 +108,7 @@ def append_to_list():
                                     qtyList = int(input(f"Enter quantitiy for product {productlist} (Max 45): "))
                                     if qtyList in range (1,46):
                                         product_cart[2] += qtyList
+                                        product_cart ["Price"] 
                                         print(product_cart)
                                         Done = False
                                     else: 
@@ -126,6 +122,7 @@ def append_to_list():
                                     qtyList = int(input(f"Enter quantitiy for product {productlist} (Max 325): "))
                                     if qtyList in range (1,326):
                                         product_cart[3] += qtyList
+
                                         print(product_cart)
                                         Done = False
                                     else: 
@@ -156,6 +153,13 @@ def append_to_list():
                                         Done = False
                                     else: 
                                         print("Invalid quantity, we do not have that many in stock.")
+                        total = 0
+                        for items in products:
+                            if items ["ProductID"] in product_cart and products:
+                                qtyList = product_cart[items["ProductID"]]
+                                var = qtyList * items["Price"]
+                                total += var
+                                print (total)
                 if not product_found:
                     #If they enter an invalid ID:
                     print ("Sorry, the product ID you are looking for is unavailable.")
@@ -214,7 +218,11 @@ def append_to_list():
                                     print(f"CVV: {cvv}")
                                     print("	----------------------------")
 
+                                    
                                     #multiply quantity and price for each product for total here
+                                    num1 = input('Enter first number:')
+                                    num2 = input('Enter first number: ')
+                                    product = float(num1)*float(num2)
 
                                     #add for each of that total 
 
@@ -241,7 +249,7 @@ def append_to_list():
                                     print("****************************************************************************************")
                                     for x in product_cart:
                                         if product_cart[x] > 0:
-                                            print(f"{products[x-1]["SKU"]}        {products[x-1]["Qty"]}           {products[x-1]["Price"]}               {products[x-1]["Description"]}")
+                                            print(f"{products[x-1]["SKU"]}        {products[x-1]}           {products[x-1]["Price"]}               {products[x-1]["Description"]}")
                                     print("****************************************************************************************")
 
                                     done = False
@@ -256,3 +264,4 @@ def append_to_list():
                     #If user doesnt want to check out loop over the product 
                     done = True
 append_to_list()
+#total_var = int(pulld_dict1) + int(pulled_dict2)

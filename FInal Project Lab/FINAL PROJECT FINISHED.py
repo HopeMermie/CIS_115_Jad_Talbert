@@ -13,7 +13,6 @@ products = [
     "ProductID": 1,
     "SKU": "usb_k981",
     "Price": 12.00,
-    "Qty":"{qtyList}",
     "Description": "USB 128 GB drive.",
     "QtyonHand": 1000,
     },
@@ -21,7 +20,6 @@ products = [
     "ProductID": 2,
     "SKU": "mbpro_490",
     "Price": 2900.00,
-    "Qty":"{qtyList}",
     "Description": "Mac Book Pro 15 inch.",
     "QtyonHand": 45,
     },
@@ -29,7 +27,6 @@ products = [
     "ProductID": 3,
     "SKU": "chip_1010",
     "Price": 48.00,
-    "Qty":"{qtyList}",
     "Description": "Arduino microprocessor.",
     "QtyonHand": 325,
     },
@@ -37,7 +34,6 @@ products = [
     "ProductID": 4,
     "SKU": "cam_78",
     "Price": 156.00,
-    "Qty":"{qtyList}",
     "Description": "Ring Camera. Model 78.",
     "QtyonHand": 98,
     },
@@ -45,7 +41,6 @@ products = [
     "ProductID": 5,
     "SKU": "smt_tv_100",
     "Price": 359.00,
-    "Qty":"{qtyList}",
     "Description": "TCL Smart TV.",
     "QtyonHand": 225,
     }
@@ -163,7 +158,7 @@ def append_to_list():
                     qtyList = product_cart[items["ProductID"]]
                     total = qtyList * items["Price"]
                     i_total += total
-            print(f"Your total currently is {i_total:.2f}")
+            print(f"Your total currently is ${i_total:.2f}")
             if affirm == "n":
                 #Prompt user if they'd like to check out
                 checkout = input("Would you like to check out (y or n)?: ")
@@ -211,13 +206,13 @@ def append_to_list():
                                     print(f"The credit card {ccNum} is valid!")
                                     expdate = input("Enter the expiration date on your card: ")
                                     cvv = input("Please enter your CVV: ")
-                                    print("	----------------------------")
-                                    print("	-----Credit Information-----")
-                                    print("	----------------------------")
+                                    print("----------------------------")
+                                    print("-----Credit Information-----")
+                                    print("----------------------------")
                                     print(f"Credit Card Number: {ccNum}")
                                     print(f"Expiration Date: {expdate}")
                                     print(f"CVV: {cvv}")
-                                    print("	----------------------------")
+                                    print("----------------------------")
 
                                     #multiply quantity and price for each product for total here
 
@@ -242,14 +237,14 @@ def append_to_list():
                                     print("----------------------------------------------------------------------------------------")
                                     print(" ")
                                     print("****************************************************************************************")
-                                    print(" SKU         Qty        Price            Description                               Total")
+                                    print(" SKU         Qty        Price       Description                                    Total")
                                     print("****************************************************************************************")
                                     for x in product_cart:
                                         if product_cart[x] > 0:
                                             qty = product_cart[x]
                                             price = products[x-1]["Price"]
                                             line_total = qty * price
-                                            print(f"{products[x-1]['SKU']:12} {qty:<10.2f} ${price:<10.2f} {products[x-1]['Description']:35} ${line_total:.2f}")
+                                            print(f"{products[x-1]['SKU']:12} {qty:<10} ${price:<10.2f} {products[x-1]['Description']:40} ${line_total:.2f}")
                                     print("****************************************************************************************")
                                     print(f"           Cart Total:{i_total:.2f}")
                                     done = False

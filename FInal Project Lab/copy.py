@@ -49,11 +49,11 @@ products = [
 #The dictionary(cart) will be editted by user when adding products
 
 product_cart = {
-     1:0,
-     2:0,
-     3:0,
-     4:0,
-     5:0,
+     "usb_k981":0,
+     "mbpro_490":0,
+     "chip_1010":0,
+     "cam_78":0,
+     "smt_tv_100":0,
 }
 
 #The names and adresses dictionary will be editted by user after finalizing cart
@@ -94,7 +94,7 @@ def append_to_list():
                                 while Done:
                                     qtyList = int(input(f"Enter quantitiy for product {productlist} (Max 1000): "))
                                     if qtyList in range (1,1001):
-                                        product_cart[1] += qtyList
+                                        product_cart["usb_k981"] += qtyList
                                         print(product_cart)
                                         Done = False
                                     else: 
@@ -153,10 +153,11 @@ def append_to_list():
                                         Done = False
                                     else: 
                                         print("Invalid quantity, we do not have that many in stock.")
+                        #adding prices
                         total = 0
                         for items in products:
-                            if items ["ProductID"] in product_cart and products:
-                                qtyList = product_cart[items["ProductID"]]
+                            if items ["SKU"] in product_cart and products:
+                                qtyList = product_cart[items["SKU"]]
                                 var = qtyList * items["Price"]
                                 total += var
                                 print (total)
@@ -220,9 +221,6 @@ def append_to_list():
 
                                     
                                     #multiply quantity and price for each product for total here
-                                    num1 = input('Enter first number:')
-                                    num2 = input('Enter first number: ')
-                                    product = float(num1)*float(num2)
 
                                     #add for each of that total 
 

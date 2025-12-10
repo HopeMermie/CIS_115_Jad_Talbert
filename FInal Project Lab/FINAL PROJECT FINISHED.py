@@ -163,7 +163,7 @@ def append_to_list():
                     qtyList = product_cart[items["ProductID"]]
                     total = qtyList * items["Price"]
                     i_total += total
-            print(f"Your total currently is {i_total}")
+            print(f"Your total currently is {i_total:.2f}")
             if affirm == "n":
                 #Prompt user if they'd like to check out
                 checkout = input("Would you like to check out (y or n)?: ")
@@ -242,16 +242,16 @@ def append_to_list():
                                     print("----------------------------------------------------------------------------------------")
                                     print(" ")
                                     print("****************************************************************************************")
-                                    print(" SKU           Qty          Price            Description                           Total")
+                                    print(" SKU         Qty        Price            Description                               Total")
                                     print("****************************************************************************************")
                                     for x in product_cart:
                                         if product_cart[x] > 0:
                                             qty = product_cart[x]
                                             price = products[x-1]["Price"]
                                             line_total = qty * price
-                                            print(f"{products[x-1]['SKU']:12} {qty:<10} ${price:<10} {products[x-1]['Description']:35} ${line_total}")
+                                            print(f"{products[x-1]['SKU']:12} {qty:<10.2f} ${price:<10.2f} {products[x-1]['Description']:35} ${line_total:.2f}")
                                     print("****************************************************************************************")
-                                    print(f"           Cart Total:{i_total}")
+                                    print(f"           Cart Total:{i_total:.2f}")
                                     done = False
                                     break
                                 else:
